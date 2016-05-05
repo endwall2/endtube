@@ -6,10 +6,11 @@
 #              and an input proxy url list, by randomizing lists and  
 #              anonymously using youtube-dl, torsocks, and the proxy
 #
-# AUTHOR:  ENDWALL DEVELOPEMENT TEAM
+# AUTHOR:  THE ENDWARE DEVELOPEMENT TEAM
 # CREATION DATE: APRIL 9 2016
 # VERSION: 0.11
 # REVISION DATE: MAY 5 2016
+# COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016
 # 
 # CHANGE LOG:  - Added a bunch of user-agents
 #              - Fixed some typos
