@@ -29,8 +29,8 @@
 #  Do the following at a command prompt
 #
 #  $  mkdir ~/bin
-#  $  chmod u+wrx endtube_x.sh
-#  $  cp endtube_x.sh ~/bin/endtube_x
+#  $  chmod u+wrx endtube.sh
+#  $  cp endtube.sh ~/bin/endtube
 #  $  export PATH=$PATH:~/bin
 #  $  cd Downloads
 #  $  mkdir videos
@@ -63,7 +63,7 @@
 #  $  torsocks curl --proxy protocol://ipv4address:port www.google.com
 #
 #     Run EndTube
-#  $  endtube_x ytinks.txt proxies.txt
+#  $  endtube ytinks.txt proxies.txt
 #
 ##############################################################################################################################################################################
 #                                         ACKNOWLEDGEMENTS
