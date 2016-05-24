@@ -8,19 +8,18 @@
 #
 # AUTHOR:  THE ENDWARE DEVELOPEMENT TEAM
 # CREATION DATE: APRIL 9 2016
-# VERSION: 0.12
-# REVISION DATE: MAY 24 2016
-# COPYRIGHT: THE ENDWARE DEVELOPEMENT TEAM, 2016 
-#
-# CHANGE LOG:  - Added exit node address grab
-#              - Added a bunch of user-agents
+# VERSION: 0.11
+# REVISION DATE: MAY 5 2016
+# COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016
+# 
+# CHANGE LOG:  - Added a bunch of user-agents
 #              - Fixed some typos
 #              - updated EULA
 #              - Fixed randomization of proxies 
 #              - Fixed instructions
 #
 ########################################################################################################################################
-# DEPENDENCIES: torsocks,youtube-dl,od,head,urandom,sleep,curl,geoiplookup
+# DEPENDENCIES: torsocks,youtube-dl,od,head,urandom,sleep
 ########################################################################################################################################
 # INSTRUCTIONS: Make a bin directory in ~/ add it to the path. Copy this file there and make executable.
 #               Make a videos directory in Downloads.  Get some download links, and some proxies place in separte text files.
@@ -29,8 +28,8 @@
 #  Do the following at a command prompt
 #
 #  $  mkdir ~/bin
-#  $  chmod u+wrx endtube_x.sh
-#  $  cp endtube_x.sh ~/bin/endtube_x
+#  $  chmod u+wrx endtube.sh
+#  $  cp endtube.sh ~/bin
 #  $  export PATH=$PATH:~/bin
 #  $  cd Downloads
 #  $  mkdir videos
@@ -63,7 +62,7 @@
 #  $  torsocks curl --proxy protocol://ipv4address:port www.google.com
 #
 #     Run EndTube
-#  $  endtube_x ytinks.txt proxies.txt
+#  $  endtube ytinks.txt proxies.txt
 #
 ##############################################################################################################################################################################
 #                                         ACKNOWLEDGEMENTS
@@ -176,14 +175,10 @@ nargs="$#"
 # randomly sort these lists
 sort -R $Lunsort > temp1.srt
 list=temp1.srt
-check_tor=check.tmp
+
 
 #main loop to select random user agent
 for link in $(cat "$list" ); do  
-
-# restart tor
-#systemctl restart tor
-
 # pick a random user agent
 n=$( expr $(head -c 2 /dev/urandom | od -A n -i) % 74 | awk '{print $1}')
 # set the user agent
@@ -268,12 +263,6 @@ echo "Delaying download for "$delay" seconds"
 # wait by delay time
 sleep "$delay"
 
-# check tor project ip
-torsocks curl -A "UA" https://check.torproject.org/ > $check_tor
-exit_address=$(grep -ah "Your IP" $check_tor | awk 'BEGIN {FS=">"} {print $3}' | awk 'BEGIN {FS="<"} {print $1}' )
-echo "TOR exit node is "$exit_address" "
-geoiplookup "$exit_address" 
-
 echo "Downloading "$link""
 # initiate download and change user agent
 
@@ -303,11 +292,7 @@ fi
 
 done
 # sometimes the download cuts off so don't delete the file until its all done
-rm "$check_tor"
-
-cp "$list" "$Lunsort"
 rm "$list"
-
 exit 0
 #########################################################        END OF PROGRAM         ######################################################################################
  
