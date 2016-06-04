@@ -6,11 +6,11 @@
 #              and an input proxy url list, by randomizing lists and  
 #              anonymously using youtube-dl, torsocks, and the proxy
 #
-# AUTHOR:  THE ENDWARE DEVELOPEMENT TEAM
+# AUTHOR:  THE ENDWARE DEVELOPMENT TEAM
 # CREATION DATE: APRIL 9 2016
 # VERSION: 0.12
 # REVISION DATE: MAY 24 2016
-# COPYRIGHT: THE ENDWARE DEVELOPEMENT TEAM, 2016 
+# COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016 
 #
 # CHANGE LOG:  - Added exit node address grab
 #              - Added a bunch of user-agents
