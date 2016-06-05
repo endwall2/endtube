@@ -8,14 +8,15 @@
 #
 # AUTHOR:  THE ENDWARE DEVELOPMENT TEAM
 # CREATION DATE: APRIL 9 2016
-# VERSION: 0.12
-# REVISION DATE: MAY 24 2016
+# VERSION: 0.13
+# REVISION DATE: JUNE 5 2016
 # COPYRIGHT: THE ENDWARE DEVELOPMENT TEAM, 2016 
 #
-# CHANGE LOG:  - Added exit node address grab
+# CHANGE LOG:  - Updated EULA
+#              - Added exit node address grab
 #              - Added a bunch of user-agents
 #              - Fixed some typos
-#              - updated EULA
+#              - Updated EULA
 #              - Fixed randomization of proxies 
 #              - Fixed instructions
 #
