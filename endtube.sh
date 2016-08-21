@@ -203,7 +203,7 @@ then
  then 
  state="rand"
  Lunsort=$2
- elif [ "$1" == "-e"]
+ elif [ "$1" == "-e" ]
  then
  enode="on"
  Lunsort=$2
